@@ -42,6 +42,11 @@ def main():
         # Update Units:
         for unit in updatable:
             unit.update(dt)
+
+        for asteroid in asteroids:
+            if player.collision(asteroid):
+                print("Game over!")
+                return
     
         # Draw screen
         screen.fill("black")
